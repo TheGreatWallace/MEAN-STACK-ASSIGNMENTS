@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Poppins:wght@100;200;400;500;800;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mainContainer">
+        <h1><%= title %></h1>
+        <button><a href="/add"> Add Project</a></button>
+        <button><a href="/notes">Add Notes</a></button>
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>Due Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+          <tbody>
+              <% user.forEach(function(software_projects) { %>
+            <tr>
+                <td><%= software_projects.id %></td>
+                <td><%= software_projects.project_title %></td>
+                <td><%= software_projects.project_description %></td>
+                <td><%= software_projects.project_start_dt.toLocaleDateString() %></td>
+                <td><%= software_projects.project_due_dt.toLocaleDateString() %></td> 
+                <td>
+                    <button><a href="/project_edit/<%=software_projects.id %>">Edit</a></button>
+                    <button><a href="/delete/<%=software_projects.id %>">Delete</a></button>
+                </td> 
+                <% }); %>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+   
+
+</body>
+</html>

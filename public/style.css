@@ -1,0 +1,27 @@
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 6;
+}
+
+.mainContainer{
+    color: red;
+    font-family: 'El Messiri', sans-serif;
+}
+
+button{
+   background-color: rgb(0, 191, 255);;
+   width: 60px;
+   border-radius: 10px;
+   border: 1px solid whitesmoke;
+   box-shadow: 7px 9px 9px rgba(119, 119, 119, 0.582);
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+tr,th,td{
+    border: 1px solid rgb(0, 191, 255);
+}

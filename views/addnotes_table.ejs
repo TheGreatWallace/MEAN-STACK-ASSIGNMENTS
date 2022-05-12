@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Poppins:wght@100;200;400;500;800;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mainContainer">
+        <h1><%= notes_title %></h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Note</th>
+                    <th>Active Date</th>
+                    <th>Project ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+          <tbody>
+              <% notes.forEach(function(notes_table) { %>
+            <tr>
+                <td><%= notes_table.id %></td>
+                <td><%= notes_table.note %></td>
+                <td><%= notes_table.active_date %></td>
+                <td><%= notes_table.project_id %></td> 
+                <td>
+                    <button><a href="/notes_edit/<%=notes_table.id %>">Edit</a></button>
+                    <button><a href="/notes_delete/<%=notes_table.id %>">Delete</a></button>
+                </td> 
+                <% }); %>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+   
+
+</body>
+</html>
